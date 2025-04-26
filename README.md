@@ -175,6 +175,36 @@ Ce projet fournit deux scripts pour un démarrage rapide :
 
 ---
 
+## 🧪 Tests Unitaires
+
+### Scénarios supplémentaires couverts
+
+- ✅ **Validation d'entrée** :
+  - Champ `q` manquant ➔ 400 Bad Request
+  - Champ `q` vide ➔ 400 Bad Request
+- ✅ **Création d'adresse** :
+  - Succès ➔ 200 OK
+  - Adresse non trouvée via API externe ➔ 404 Not Found
+  - Échec de l'API externe ➔ 500 Internal Server Error
+- ✅ **Consultation des risques** :
+  - Succès ➔ 200 OK
+  - Adresse inexistante en base ➔ 404 Not Found
+  - Échec d'appel à l'API Géorisques ➔ 500 Internal Server Error
+
+### Technologies utilisées pour les tests
+
+- **Django TestCase** pour les tests unitaires
+- **Unittest.mock.patch** pour simuler les appels aux API externes
+
+### Lancer tous les tests
+
+Depuis la racine du projet, exécuter :
+
+```bash
+python manage.py test
+```
+---
+
 ## 🛠 FAQ
 
 - **Problème : Docker ne trouve pas de fichier de configuration**  

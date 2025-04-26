@@ -6,6 +6,13 @@ from .models import Address
 from .serializers import AddressSerializer
 
 class AddressCreateView(APIView):
+    """
+    Crée une adresse basée sur une requête utilisateur.
+
+    - **q**: Chaîne de recherche pour trouver l'adresse via l'API BAN.
+
+    Retourne l'objet adresse enregistré en base de données, ou l'adresse existante si elle est déjà présente.
+    """
     def post(self, request):
         q = request.data.get('q', '').strip()
         if not q:
@@ -24,7 +31,6 @@ class AddressCreateView(APIView):
 
         properties = data['features'][0]['properties']
         geometry = data['features'][0]['geometry']['coordinates']
-
         longitude = geometry[0]
         latitude = geometry[1]
 
@@ -47,6 +53,13 @@ class AddressCreateView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class AddressRiskView(APIView):
+    """
+    Récupère les risques géographiques associés à une adresse.
+
+    - **id**: L'identifiant de l'adresse enregistrée en base.
+
+    Retourne un objet JSON contenant les risques retournés par l'API Géorisques.
+    """
     def get(self, request, id):
         try:
             address = Address.objects.get(id=id)
