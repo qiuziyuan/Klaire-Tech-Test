@@ -196,6 +196,20 @@ Ce projet fournit deux scripts pour un démarrage rapide :
 - **Django TestCase** pour les tests unitaires
 - **Unittest.mock.patch** pour simuler les appels aux API externes
 
+### Avant de lancer les tests
+
+Pour exécuter correctement les tests en local (hors Docker), merci de suivre ces étapes préalables :
+
+1. Créer et activer un environnement virtuel :
+```bash
+python -m venv venv
+source venv/bin/activate  # Sous Windows : venv\Scripts\activate
+```
+2. Installer les dépendances du projet :
+```bash
+pip install -r requirements.txt
+```
+
 ### Lancer tous les tests
 
 Depuis la racine du projet, exécuter :
