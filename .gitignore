@@ -1,4 +1,4 @@
-# Python
+python manage.py migrate# Python
 __pycache__/
 *.pyc
 *.pyo
