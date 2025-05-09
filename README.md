@@ -1,4 +1,4 @@
-# Test Technique Backend – Klaire
+# Test Technique Backend
 
 Ce projet est une API backend réalisée avec Django et Django REST Framework, permettant de :
 - Enregistrer une adresse en base de données
@@ -234,8 +234,4 @@ python manage.py test
 
 ## 👨‍💻 Auteur
 
-- **Pierre (qiuziyuan)** – Test technique pour Klaire.
-
----
-
-Merci de votre attention et bonne évaluation !
+- **Pierre (qiuziyuan)**
